@@ -14,7 +14,7 @@ const LoginScreen = () => {
   const [email, setEmail] = React.useState({ value: '', error: '' });
   const [password, setPassword] = React.useState({ value: '', error: '' });
 
-  const _onLoginPressed = () => {
+  const onLoginPressed = () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
 
@@ -66,7 +66,7 @@ const LoginScreen = () => {
             </TouchableOpacity>
           </View>
 
-          <Button mode="contained" onPress={_onLoginPressed}>
+          <Button mode="contained" onPress={onLoginPressed}>
             Login
           </Button>
 
