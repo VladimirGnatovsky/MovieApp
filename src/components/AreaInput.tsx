@@ -5,10 +5,10 @@ import theme from '../constants/Color';
 
 type Props = React.ComponentProps<typeof Input> & { errorText?: string };
 
-const TextInput = ({ errorText, ...props }: Props) => (
+const AreaInput = ({ errorText, ...props }: Props) => (
   <View style={styles.container}>
     <Input
-      style={styles.input}
+      style={styles.inputWrap}
       selectionColor={theme.color.main}
       underlineColor={theme.color.black}
       theme={{colors: {primary: '#28a3ed'}}}
@@ -24,9 +24,10 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 5,
   },
-  input: {
+  inputWrap: {
     backgroundColor: theme.color.white,
     paddingLeft: 25,
+    width:'100%',
   },
   error: {
     fontSize: 14,
@@ -36,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TextInput;
+export default AreaInput;

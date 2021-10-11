@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "commonjs": true
     },
     "extends": [
         "eslint:recommended",
@@ -38,6 +39,7 @@
             "always"
           ],
           "react/display-name": [0],
+          "@typescript-eslint/no-explicit-any": "off",
           "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }

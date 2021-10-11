@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: theme.color.main,
     fontWeight: 'bold',
+    marginBottom:10,
   },
 });
 

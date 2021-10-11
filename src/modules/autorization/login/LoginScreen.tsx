@@ -1,20 +1,25 @@
 import * as React from 'react';
 import { TouchableOpacity, StyleSheet, Text, View} from 'react-native';
-import Background from '../../components/Background';
-import Logo from '../../components/Logo';
-import Header from '../../components/Header';
-import Button from '../../components/Button';
-import TextInput from '../../components/TextInput';
+import Background from '../../../components/Background';
+import Logo from '../../../components/Logo';
+import Header from '../../../components/Header';
+import Button from '../../../components/Button';
+import AreaInput from '../../../components/AreaInput';
 import { MaterialIcons } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { emailValidator, passwordValidator } from '../../core/utils';
-import theme from '../../constants/Color';
+import { emailValidator, passwordValidator } from '../../../core/utils';
+import theme from '../../../constants/Color';
+import { Navigation } from '../../types';
 
-const LoginScreen = () => {
+type Props = {
+  navigation: Navigation;
+};
+
+const LoginScreen = ({ navigation }: Props) => {
   const [email, setEmail] = React.useState({ value: '', error: '' });
   const [password, setPassword] = React.useState({ value: '', error: '' });
 
-  const _onLoginPressed = () => {
+  const onLoginPressed = () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
 
@@ -27,13 +32,13 @@ const LoginScreen = () => {
 
   return (
     <Background>
-      <KeyboardAwareScrollView enableOnAndroid={true}>
-        <Logo />
-        <View style={styles.boxShadow}>
-          <Header>Login Form</Header>
+      <Logo />
+      <View style={styles.boxShadow}>
+        <Header>Login Form</Header>
+        <KeyboardAwareScrollView enableOnAndroid={true} extraHeight={-120} extraScrollHeight={-120}>
           <View style={styles.row}>
             <MaterialIcons name="person" size={25} style={styles.iconStyle} />
-            <TextInput
+            <AreaInput
               placeholder="Email"
               returnKeyType="next"
               value={email.value}
@@ -48,7 +53,7 @@ const LoginScreen = () => {
           </View>
           <View style={styles.row}>
             <MaterialIcons name="lock" size={25} style={styles.iconStyle} />
-            <TextInput
+            <AreaInput
               placeholder="Password"
               returnKeyType="done"
               value={password.value}
@@ -60,35 +65,29 @@ const LoginScreen = () => {
           </View>
           <View style={styles.forgotPassword}>
             <TouchableOpacity
-              onPress={() => alert('Coming soon...')}
+              onPress={() => navigation.navigate('Register')}
             >
               <Text style={styles.label}>Forgot your password?</Text>
             </TouchableOpacity>
           </View>
 
-          <Button mode="contained" onPress={_onLoginPressed}>
+          <Button mode="contained" onPress={onLoginPressed}>
             Login
           </Button>
 
           <View style={styles.row}>
             <Text style={styles.label}>Don’t have an account? </Text>
-            <TouchableOpacity onPress={() => alert('Coming soon...')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
               <Text style={styles.link}>Sign up</Text>
             </TouchableOpacity>
           </View>
-        </View>
-      </KeyboardAwareScrollView>
+        </KeyboardAwareScrollView>
+      </View>
     </Background>
   );
 };
 
 const styles = StyleSheet.create({
-  forgotPassword: {
-    width: '100%',
-    alignItems: 'flex-end',
-    marginBottom: 25,
-    marginTop: 10,
-  },
   boxShadow: {
     backgroundColor: theme.color.white,
     shadowColor: theme.color.black,
@@ -103,9 +102,12 @@ const styles = StyleSheet.create({
     margin:10,
     padding:20,
     borderRadius:10,
+    marginHorizontal: 30,
   },
   row: {
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 5,
   },
   label: {
@@ -121,6 +123,12 @@ const styles = StyleSheet.create({
   link: {
     fontWeight: 'bold',
     color: theme.color.black,
+  },
+  forgotPassword: {
+    width: '100%',
+    alignItems: 'flex-end',
+    marginBottom: 25,
+    marginTop: 10,
   },
 });
 
