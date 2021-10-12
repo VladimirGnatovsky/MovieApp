@@ -2,10 +2,6 @@
 
 MovieApp written with ReactNative and expo.
 
-## Preview
-
-![login](login-screen.png)
-
 ## How to run
 
 * Ensure that you have installed NodeJS and Expo-CLI. More indormation about [Exspo-CLI](https://docs.expo.dev/get-started/installation/#requirements).

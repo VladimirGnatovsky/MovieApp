@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, StyleSheet } from 'react-native';
 import theme from '../constants/Color';
+import images from '../constants/Images';
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ type Props = {
 
 const Background = ({ children }: Props) => (
   <ImageBackground
-    source={require('../../assets/images/background_dot.png')}
+    source={images.bgWrapImage.uri}
     resizeMode="repeat"
     style={styles.mainWrap}
   >

@@ -3,9 +3,10 @@ import { TouchableOpacity, Image, View, StyleSheet, Platform, Text, ImageBackgro
 import * as ImagePicker from 'expo-image-picker';
 import { AntDesign } from '@expo/vector-icons';
 import theme from '../constants/Color';
+import images from '../constants/Images';
 
 export default function ImagePickerExample() {
-  const [image, setImage] = useState<any | null>(null);
+  const [image, setImage] =  useState<string | null>(null);
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -35,7 +36,7 @@ export default function ImagePickerExample() {
       {
         image && <Image source={{ uri: image }} style={{ width: 175, height: 175 }} />
       }
-      <ImageBackground source={require('../../assets/images/avatar.jpg')} style={styles.avatarBg}>
+      <ImageBackground source={images.avatarBg.uri} style={styles.avatarBg}>
         <View style={styles.uploadBtnContainer}>
           <TouchableOpacity onPress={pickImage} style={styles.uploadBtn} >
             <Text>{image ? 'Edit' : 'Upload'} Image</Text>

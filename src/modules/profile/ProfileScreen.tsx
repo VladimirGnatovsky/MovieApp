@@ -7,6 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { MaterialIcons } from '@expo/vector-icons';
 import theme from '../../constants/Color';
 import { Navigation } from '../types';
+import images from '../../constants/Images';
 
 type Props = {
   navigation: Navigation;
@@ -16,7 +17,7 @@ const ProfileScreen  = ({ navigation }: Props) =>{
   return (
     <Background>
       <ScrollView style={styles.containerProfile}>
-        <Image source={require('../../../assets/images/01.jpg')} style={styles.photoWrap} />
+        <Image source={images.photoWrap.uri} style={styles.photoWrap} />
         <View style={styles.topWrap}>
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <MaterialIcons name="chevron-left" size={34} color={theme.color.white} style={styles.topIconLeft} />
