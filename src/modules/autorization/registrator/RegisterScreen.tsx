@@ -42,7 +42,7 @@ const RegisterScreen =  ({ navigation }: Props) => {
       <Logo />
       <View style={styles.boxShadow}>
         <Header>Create Account</Header>
-        <KeyboardAwareScrollView enableOnAndroid={true} extraHeight={-80} extraScrollHeight={-80}>
+        <KeyboardAwareScrollView extraHeight={-80} extraScrollHeight={-80}>
           <View style={styles.row}>
             <MaterialIcons name="person" size={25} style={styles.iconStyle} />
             <AreaInput
@@ -112,6 +112,10 @@ const styles = StyleSheet.create({
     padding:20,
     borderRadius:10,
     marginHorizontal: 30,
+    width: '100%',
+    maxWidth:325,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   row: {
     flexDirection: 'row',

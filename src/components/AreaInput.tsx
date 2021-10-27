@@ -21,7 +21,7 @@ const AreaInput = ({ errorText, ...props }: Props) => (
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: 285,
     marginVertical: 5,
   },
   inputWrap: {

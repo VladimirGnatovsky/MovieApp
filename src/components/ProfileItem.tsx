@@ -4,14 +4,14 @@ import { MaterialIcons } from '@expo/vector-icons';
 import theme from '../constants/Color';
 
 const ProfileItem = () => {
-  const [location, setAddress] = React.useState({ value: ''});
+  const [location, setAddress] = React.useState('');
   const [phone, setPhone] = React.useState({ value: ''});
   const [email, setEmail] = React.useState({ value: ''});
 
   return (
    
     <View style={styles.boxShadow}>
-      
+
       <View style={styles.ratingsProfileItem}>
         <Text style={styles.ratingsTextProfileItem}>
           <MaterialIcons name="star-outline" size={16} color={theme.color.white} /> 4.5/5 Rating
@@ -27,8 +27,8 @@ const ProfileItem = () => {
           <MaterialIcons name="location-on" size={20} style={styles.iconStyle} />
           <TextInput
             style={styles.inputStyle}
-            onChangeText={text => setAddress({ value: text })}
-            value={location.value}
+            onChangeText={setAddress}
+            value={location}
             placeholder="Irvine, CA"
           />
         </View>
@@ -75,6 +75,10 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius:10,
     marginHorizontal: 30,
+    width: '100%',
+    maxWidth:325,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   ratingsProfileItem: {
     width: 150,

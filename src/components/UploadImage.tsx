@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, Image, View, StyleSheet, Platform, Text, ImageBackground } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { AntDesign } from '@expo/vector-icons';
@@ -20,21 +20,10 @@ export default function ImagePickerExample() {
     }
   };
 
-  useEffect(() => {
-    (async () => {
-      if (Platform.OS !== 'web') {
-        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (status !== 'granted') {
-          alert('Sorry, we need camera roll permissions to make this work!');
-        }
-      }
-    })();
-  }, []);
-
   return (
     <View style={styles.container}>
       {
-        image && <Image source={{ uri: image }} style={{ width: 175, height: 175 }} />
+        image && <Image source={{ uri: image }} style={styles.avatarSize} />
       }
       <ImageBackground source={images.avatarBg.uri} style={styles.avatarBg}>
         <View style={styles.uploadBtnContainer}>
@@ -62,6 +51,10 @@ const styles=StyleSheet.create({
     borderWidth: 5,
     borderColor: theme.color.blue,
         
+  },
+  avatarSize:{
+    width: 175, 
+    height: 175
   },
   avatarBg: {
     height:175,

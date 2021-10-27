@@ -35,7 +35,7 @@ const LoginScreen = ({ navigation }: Props) => {
       <Logo />
       <View style={styles.boxShadow}>
         <Header>Login Form</Header>
-        <KeyboardAwareScrollView enableOnAndroid={true} extraHeight={-120} extraScrollHeight={-120}>
+        <KeyboardAwareScrollView extraHeight={-120} extraScrollHeight={-120}>
           <View style={styles.row}>
             <MaterialIcons name="person" size={25} style={styles.iconStyle} />
             <AreaInput
@@ -103,6 +103,10 @@ const styles = StyleSheet.create({
     padding:20,
     borderRadius:10,
     marginHorizontal: 30,
+    width: '100%',
+    maxWidth: 325,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   row: {
     flexDirection: 'row',

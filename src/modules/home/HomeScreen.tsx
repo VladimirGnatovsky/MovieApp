@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
     padding:20,
     borderRadius:10,
     marginHorizontal: 30,
+    width: '100%',
+    maxWidth:325,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   row:{
     alignItems: 'center',
@@ -61,11 +65,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   iconHome:{
-    padding: 10,
-    borderRadius: 27,
+    padding: 5,
+    borderRadius: 22,
     borderWidth: 2,
     borderColor: theme.color.blue,
-    margin: 10,
+    margin: 5,
     color: theme.color.blue,
   },
 });

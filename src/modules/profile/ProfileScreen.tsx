@@ -26,7 +26,7 @@ const ProfileScreen  = ({ navigation }: Props) =>{
             <MaterialIcons name="more-vert" size={34} color={theme.color.white} style={styles.topIconRight} />
           </TouchableOpacity>
         </View>
-        <KeyboardAwareScrollView enableOnAndroid={true} extraHeight={-90} extraScrollHeight={-90}>
+        <KeyboardAwareScrollView extraHeight={-90} extraScrollHeight={-90}>
           <View style={styles.containerProfileBox}>
             <ImagePickerExample />
             <ProfileItem />
@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center', 
     alignItems: 'center',
-    marginTop: -250,
+    marginTop: -350,
   },
   photoWrap: {
     width: '100%',
-    height: 400,
+    height: 300,
     position: 'absolute',
     left: 0,
     top: 0,
