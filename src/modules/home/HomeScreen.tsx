@@ -23,14 +23,14 @@ const HomeScreen = ({ navigation }: Props) => {
         The easiest way to start with your amazing application.
         </Paragraph>
         <View style={styles.row}>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Autorization')}>
+            <MaterialIcons name="account-box" size={30} style={styles.iconHome} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('List')}>
             <MaterialIcons name="movie" size={30} style={styles.iconHome} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-            <MaterialIcons name="hd" size={30} style={styles.iconHome} />
-          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-            <MaterialIcons name="slideshow" size={30} style={styles.iconHome} />
+            <MaterialIcons name="emoji-people" size={30} style={styles.iconHome} />
           </TouchableOpacity>
         </View>
       </View>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Image, View, StyleSheet, Platform, Text, ImageBackground } from 'react-native';
+import { TouchableOpacity, Image, View, StyleSheet, Text, ImageBackground } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { AntDesign } from '@expo/vector-icons';
 import theme from '../constants/Color';

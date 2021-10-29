@@ -22,7 +22,7 @@ const ProfileScreen  = ({ navigation }: Props) =>{
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <MaterialIcons name="chevron-left" size={34} color={theme.color.white} style={styles.topIconLeft} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Autorization')}>
             <MaterialIcons name="more-vert" size={34} color={theme.color.white} style={styles.topIconRight} />
           </TouchableOpacity>
         </View>
