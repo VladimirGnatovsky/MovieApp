@@ -32,6 +32,9 @@ const HomeScreen = ({ navigation }: Props) => {
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
             <MaterialIcons name="emoji-people" size={30} style={styles.iconHome} />
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Swiper')}>
+            <MaterialIcons name="theater-comedy" size={30} style={styles.iconHome} />
+          </TouchableOpacity>
         </View>
       </View>
     </Background>

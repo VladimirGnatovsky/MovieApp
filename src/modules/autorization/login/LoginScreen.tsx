@@ -4,7 +4,7 @@ import Background from '../../../components/Background';
 import Logo from '../../../components/Logo';
 import Header from '../../../components/Header';
 import Button from '../../../components/Button';
-import AreaInput from '../../../components/AreaInput';
+import Inputs from '../../../components/Inputs';
 import { MaterialIcons } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { emailValidator, passwordValidator } from '../../../core/utils';
@@ -38,7 +38,7 @@ const LoginScreen = ({ navigation }: Props) => {
         <KeyboardAwareScrollView extraHeight={-120} extraScrollHeight={-120}>
           <View style={styles.row}>
             <MaterialIcons name="person" size={25} style={styles.iconStyle} />
-            <AreaInput
+            <Inputs
               placeholder="Email"
               returnKeyType="next"
               value={email.value}
@@ -53,7 +53,7 @@ const LoginScreen = ({ navigation }: Props) => {
           </View>
           <View style={styles.row}>
             <MaterialIcons name="lock" size={25} style={styles.iconStyle} />
-            <AreaInput
+            <Inputs
               placeholder="Password"
               returnKeyType="done"
               value={password.value}

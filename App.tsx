@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons } from '@expo/vector-icons';
-import { HomeScreen, ProfileScreen, ListScreen, LoginScreen, RegisterScreen } from './src/modules';
+import { HomeScreen, ProfileScreen, ListScreen, SwiperScreen, LoginScreen, RegisterScreen } from './src/modules';
 import theme from './src/constants/Color';
 
 const Stack = createStackNavigator();
@@ -26,6 +26,7 @@ export default function App() {
         <Tab.Screen name="List" component={ListScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="local-movies" color={color} size={32} />), }} />
         <Tab.Screen name="Autorization" component={AutorizationScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="login" color={color} size={32} />), }} />
         <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="people" color={color} size={32} />), }} />
+        <Tab.Screen name="Swiper" component={SwiperScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="swipe" color={color} size={32} />), }} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -11,9 +11,13 @@ import Header from '../../components/Header';
 import ListFilms from '../../components/ListFilms';
 import DEMO from '../../../assets/data/demo';
 import theme from '../../constants/Color';
+import { Navigation } from '../types';
 
+type Props = {
+  navigation: Navigation;
+};
 
-const ListScreen = () => {
+const ListScreen = ({ navigation }: Props) =>{
   return (
     <Background>
       <Logo />
@@ -23,7 +27,7 @@ const ListScreen = () => {
           data={DEMO}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Swiper')}>
               <ListFilms
                 image={item.image}
                 name={item.name}

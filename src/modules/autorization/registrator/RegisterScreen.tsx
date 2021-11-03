@@ -4,7 +4,7 @@ import Background from '../../../components/Background';
 import Logo from '../../../components/Logo';
 import Header from '../../../components/Header';
 import Button from '../../../components/Button';
-import AreaInput from '../../../components/AreaInput';
+import Inputs from '../../../components/Inputs';
 import { MaterialIcons } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import theme from '../../../constants/Color';
@@ -45,7 +45,7 @@ const RegisterScreen =  ({ navigation }: Props) => {
         <KeyboardAwareScrollView extraHeight={-80} extraScrollHeight={-80}>
           <View style={styles.row}>
             <MaterialIcons name="person" size={25} style={styles.iconStyle} />
-            <AreaInput
+            <Inputs
               label="Name"
               returnKeyType="next"
               value={name.value}
@@ -56,7 +56,7 @@ const RegisterScreen =  ({ navigation }: Props) => {
           </View>
           <View style={styles.row}>
             <MaterialIcons name="mail" size={25} style={styles.iconStyle} />
-            <AreaInput
+            <Inputs
               label="Email"
               returnKeyType="next"
               value={email.value}
@@ -71,7 +71,7 @@ const RegisterScreen =  ({ navigation }: Props) => {
           </View>
           <View style={styles.row}>
             <MaterialIcons name="lock" size={25} style={styles.iconStyle} />
-            <AreaInput
+            <Inputs
               label="Password"
               returnKeyType="done"
               value={password.value}

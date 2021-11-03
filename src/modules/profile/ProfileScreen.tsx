@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ScrollView, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Background from '../../components/Background';
 import ProfileItem from '../../components/ProfileItem';
-import ImagePickerExample from '../../components/UploadImage';
+import ImagePicker from '../../components/UploadImage';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { MaterialIcons } from '@expo/vector-icons';
 import theme from '../../constants/Color';
@@ -28,7 +28,7 @@ const ProfileScreen  = ({ navigation }: Props) =>{
         </View>
         <KeyboardAwareScrollView extraHeight={-90} extraScrollHeight={-90}>
           <View style={styles.containerProfileBox}>
-            <ImagePickerExample />
+            <ImagePicker />
             <ProfileItem />
           </View>
         </KeyboardAwareScrollView>

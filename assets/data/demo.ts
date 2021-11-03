@@ -1,7 +1,7 @@
-import { DataT } from '../../src/modules/types';
+import { Data } from '../../src/modules/types';
 import images from '../../src/constants/Images';
 
-const data: DataT[] = [
+const data: Data[] = [
   {
     id: 1,
     name: 'Avengers: Endgame',

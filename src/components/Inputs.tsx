@@ -5,7 +5,7 @@ import theme from '../constants/Color';
 
 type Props = React.ComponentProps<typeof Input> & { errorText?: string };
 
-const AreaInput = ({ errorText, ...props }: Props) => (
+const Inputs = ({ errorText, ...props }: Props) => (
   <View style={styles.container}>
     <Input
       style={styles.inputWrap}
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AreaInput;
+export default Inputs;

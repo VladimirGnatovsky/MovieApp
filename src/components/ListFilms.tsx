@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Text, View, Image, StyleSheet, ScrollView } from 'react-native';
-import { FilmsT } from '../modules/types';
+import { Films } from '../modules/types';
 import theme from '../constants/Color';
 
-const ListFilms = ({ image, lastDescription, name }: FilmsT) => (
+const ListFilms = ({ image, lastDescription, name }: Films) => (
   <ScrollView>
     <View style={styles.containerMessage}>
       <Image source={image} style={styles.avatar} />
