@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialIcons } from '@expo/vector-icons';
+import { HomeScreen, ProfileScreen, ListScreen, SwiperScreen, LoginScreen, RegisterScreen } from './src/modules';
+import theme from './src/constants/Color';
 
-export default function App() {
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function AutorizationScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={{ headerShown: false }} >
+        <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="home" color={color} size={32} />), }} />
+        <Tab.Screen name="List" component={ListScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="local-movies" color={color} size={32} />), }} />
+        <Tab.Screen name="Autorization" component={AutorizationScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="login" color={color} size={32} />), }} />
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="people" color={color} size={32} />), }} />
+        <Tab.Screen name="Swiper" component={SwiperScreen} options={{ tabBarActiveTintColor: theme.color.blue, tabBarIcon: ({ color }) => (<MaterialIcons name="swipe" color={color} size={32} />), }} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
